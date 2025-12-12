@@ -1,14 +1,14 @@
-# Ignore all virtual environments
+# virtual envs
 venv/
 env/
+*venv*/
 global_venv/
 venv_a/
-my_env/
 ASSIGNEMENNTS/day_02/excersice_02/my_venv/
 
+# env file
+.env
 
-# Python cache files
+# python cache
 __pycache__/
 *.pyc
-
- 
