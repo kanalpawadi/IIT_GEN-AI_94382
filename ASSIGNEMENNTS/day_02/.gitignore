@@ -3,10 +3,12 @@ venv/
 env/
 global_venv/
 venv_a/
+my_env/
+ASSIGNEMENNTS/day_02/excersice_02/my_venv/
+
 
 # Python cache files
 __pycache__/
 *.pyc
 
-# Environment variables
-.env
+ 
