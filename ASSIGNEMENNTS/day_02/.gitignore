@@ -1,0 +1,12 @@
+# Ignore all virtual environments
+venv/
+env/
+global_venv/
+venv_a/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
