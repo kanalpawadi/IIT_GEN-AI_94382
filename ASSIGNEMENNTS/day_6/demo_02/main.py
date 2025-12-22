@@ -25,7 +25,7 @@ url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={weather_
 response = requests.get(url)
 
 if response.status_code!=200:
-    print("error in fetching weather data ")
+    st.write("error in fetching weather data ")
     exit()
 
 weather =response.json()
