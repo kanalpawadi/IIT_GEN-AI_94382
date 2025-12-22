@@ -5,6 +5,9 @@ __pycache__/
 # Virtual Environments
 global_venv/
 venv/
+venv_a/
+.venv/
+env/
 
 # Environment variables
 .env
