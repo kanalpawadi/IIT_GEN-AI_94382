@@ -81,16 +81,25 @@ agent=create_agent(
     system_prompt="You are a helpful assistent . Answer in short ."
 
 )
+if "chat" not in s.session_state:
+    s.session_state.chat = []
+
 user_input=s.chat_input("You: ")
 if user_input:
+    s.session_state.chat.append({"role":"user","content":user_input})
     #invoke the agent with user input 
     result=agent.invoke({
-        "messages":[
-            {"role":"user","content":user_input}
-        ]
-    })
-
-    llm_output=result["messages"][-1]
-    s.write("AI: ",llm_output.content)
-    # s.write("\n\n", result["messages"])
+        "messages":s.session_state.chat
         
+    })
+    llm_output=result["messages"][-1].content
+    #s.write("AI: ",llm_output.content)
+    s.session_state.chat.append({"role":"assistant","content":llm_output})
+    # s.write("\n\n", result["messages"])
+
+    for msg in s.session_state.chat:
+        if msg["role"]=="user":
+            s.write(f"You: {msg['content']}")
+        else:
+            s.write(f"AI: {msg['content']}")
+            
